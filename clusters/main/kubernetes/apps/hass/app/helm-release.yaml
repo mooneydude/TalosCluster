@@ -72,7 +72,7 @@ spec:
             src:
               enabled: true
               trigger:
-                schedule: 15 23 * * *
+                schedule: 0 16 * * *
       zigbeedongle:
         enabled: true
         type: device
