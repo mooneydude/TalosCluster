@@ -48,7 +48,7 @@ spec:
       main:
         enabled: true
         hosts:
-          - host: vpn.${DOMAIN_1}
+          - host: wireguard.${DOMAIN_1}
         integrations:
           traefik:
             enabled: true
