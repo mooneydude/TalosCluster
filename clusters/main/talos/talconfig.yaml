@@ -29,7 +29,7 @@ nodes:
         - 1.1.1.1
         - 8.8.8.8
       installDiskSelector:
-        size: <= 1600GB
+        size: <= 1TB
       networkInterfaces:
         # suffix is the adapter mac adres.
         - interface: eth0
@@ -76,48 +76,48 @@ nodes:
               gateway: ${GATEWAY}
           vip:
             ip: ${VIP}                    
-    # - hostname: k8s-worker-1
-    #   ipAddress: 192.168.68.138
-    #   nameservers:
-    #     - 1.1.1.1
-    #     - 8.8.8.8
-    #   installDiskSelector:
-    #     size: <= 600GB
-    #   schematic:
-    #       customization:
-    #           systemExtensions:
-    #               officialExtensions:
-    #                   - siderolabs/amd-ucode
-    #                   - siderolabs/iscsi-tools
-    #                   - siderolabs/util-linux-tools                                      
-    # - hostname: k8s-worker-2
-    #   ipAddress: 192.168.68.140
-    #   nameservers:
-    #     - 1.1.1.1
-    #     - 8.8.8.8
-    #   installDiskSelector:
-    #     size: <= 600GB
-    #   schematic:
-    #       customization:
-    #           systemExtensions:
-    #               officialExtensions:
-    #                   - siderolabs/amd-ucode
-    #                   - siderolabs/iscsi-tools
-    #                   - siderolabs/util-linux-tools                                      
-    # - hostname: k8s-worker-3
-    #   ipAddress: 192.168.68.124
-    #   nameservers:
-    #     - 1.1.1.1
-    #     - 8.8.8.8
-    #   installDiskSelector:
-    #     size: <= 600GB
-    #   schematic:
-    #       customization:
-    #           systemExtensions:
-    #               officialExtensions:
-    #                   - siderolabs/qemu-guest-agent
-    #                   - siderolabs/iscsi-tools
-    #                   - siderolabs/util-linux-tools                                      
+    - hostname: k8s-worker-1
+      ipAddress: 192.168.68.143
+      nameservers:
+        - 1.1.1.1
+        - 8.8.8.8
+      installDiskSelector:
+        size: <= 600GB
+      schematic:
+          customization:
+              systemExtensions:
+                  officialExtensions:
+                      - siderolabs/amd-ucode
+                      - siderolabs/iscsi-tools
+                      - siderolabs/util-linux-tools                                      
+    - hostname: k8s-worker-2
+      ipAddress: 192.168.68.144
+      nameservers:
+        - 1.1.1.1
+        - 8.8.8.8
+      installDiskSelector:
+        size: <= 600GB
+      schematic:
+          customization:
+              systemExtensions:
+                  officialExtensions:
+                      - siderolabs/amd-ucode
+                      - siderolabs/iscsi-tools
+                      - siderolabs/util-linux-tools                                      
+    - hostname: k8s-worker-3
+      ipAddress: 192.168.68.145
+      nameservers:
+        - 1.1.1.1
+        - 8.8.8.8
+      installDiskSelector:
+        size: <= 600GB
+      schematic:
+          customization:
+              systemExtensions:
+                  officialExtensions:
+                      - siderolabs/qemu-guest-agent
+                      - siderolabs/iscsi-tools
+                      - siderolabs/util-linux-tools                                      
 
 controlPlane:
     patches:
