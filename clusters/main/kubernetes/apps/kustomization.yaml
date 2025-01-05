@@ -5,5 +5,5 @@ resources:
   - cloudflared/ks.yaml
   - wg-easy/ks.yaml
   - hass/ks.yaml
-  # - mooneycloud/ks.yaml
+  - mooneycloud/ks.yaml
   - xteve/ks.yaml
