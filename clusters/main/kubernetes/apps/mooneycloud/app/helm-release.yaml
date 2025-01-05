@@ -58,7 +58,7 @@ spec:
             postgresql:
                 max_slot_wal_keep_size: 1GB
                 wal_compression: lz4
-          mode: recovery
+          # mode: recovery
           backups:
             enabled: true
             credentials: s3
@@ -68,7 +68,7 @@ spec:
                 backupOwnerReference: self
                 immediate: true
                 suspend: false
-            # revision: "1"      
+            revision: "1"      
           recovery:
             method: object_store
             credentials: s3 
