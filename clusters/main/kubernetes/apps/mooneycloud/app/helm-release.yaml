@@ -68,11 +68,11 @@ spec:
                 backupOwnerReference: self
                 immediate: true
                 suspend: false
-            revision: "1"      
+            # revision: "1"      
           recovery:
             method: object_store
             credentials: s3 
-            revision: "1"           
+            # revision: "1"           
       persistence:
         config:
           volsync:
