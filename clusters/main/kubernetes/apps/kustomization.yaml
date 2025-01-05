@@ -6,3 +6,4 @@ resources:
   - wg-easy/ks.yaml
   - hass/ks.yaml
   - mooneycloud/ks.yaml
+  - xteve/ks.yaml
