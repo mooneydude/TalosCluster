@@ -3,6 +3,8 @@ kind: HelmRelease
 metadata:
   name: hass
   namespace: hass
+  labels:
+    kubernetes.io/hostname: k8s-worker-1
 spec:
   interval: 15m
   chart:
@@ -94,16 +96,3 @@ spec:
         recovery:
           credentials: s3
           revision: "1"
-    # Add node affinity for specific node deployment
-    nodeSelector:
-      kubernetes.io/hostname: k8s-worker-1
-    # Alternatively, you can use nodeAffinity for more complex rules:
-    # affinity:
-    #   nodeAffinity:
-    #     requiredDuringSchedulingIgnoredDuringExecution:
-    #       nodeSelectorTerms:
-    #       - matchExpressions:
-    #         - key: kubernetes.io/hostname
-    #           operator: In
-    #           values:
-    #           - k8s-worker-1
