@@ -30,10 +30,17 @@ spec:
     keepHistory: false
 
   values:
+    TZ: America/Chicago
     global:
       stopAll: false
-
-    TZ: America/Chicago
+    credentials:
+      s3:
+        type: s3
+        url: "${S3URL}"
+        bucket: "${S3PREFIX}-xteve"
+        accessKey: "${S3ID}"
+        secretKey: "${S3KEY}"
+        encrKey: "${S3KEY}"
     service:
       main:
         type: LoadBalancer
@@ -42,3 +49,15 @@ spec:
           main:
             port: 34400
             targetPort: 34400
+    persistence:
+      config:
+        volsync:
+        - name: config
+          type: restic
+          credentials: s3
+          dest:
+            enabled: true
+          src:
+            enabled: true
+            # trigger:
+            #   schedule: 30 1 * * *            
