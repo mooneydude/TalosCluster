@@ -96,7 +96,9 @@ spec:
         recovery:
           credentials: s3
           revision: "1"
-      workload:
-        main:
-          podSpec:
-            runtimeClassName: "generic-device-plugin"          
+    workload:
+      workload-name:
+        podSpec:
+          nodeSelector:
+            kubernetes.io/usb-ff_10c4_ea60: "k8s-worker-1"
+         
