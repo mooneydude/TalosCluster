@@ -96,3 +96,7 @@ spec:
         recovery:
           credentials: s3
           revision: "1"
+      workload:
+        main:
+          podSpec:
+            runtimeClassName: "generic-device-plugin"          
