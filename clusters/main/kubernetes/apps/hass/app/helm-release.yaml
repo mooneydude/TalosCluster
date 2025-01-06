@@ -29,8 +29,7 @@ spec:
   uninstall:
     keepHistory: false
   values:
-    nodeName: k8s-worker-1
-    ## Enable host networking for direct network access. True breaks K8s secruirty.
+    ## Enable host networking for direct network access. True breaks K8s security.
     # hostNetwork: true
     TZ: America/Chicago   
     global:
@@ -73,7 +72,7 @@ spec:
             src:
               enabled: true
               trigger:
-                schedule: 0 23 * * *
+                schedule: "0 23 * * *"
       zigbeedongle:
         enabled: true
         type: device
@@ -95,3 +94,16 @@ spec:
         recovery:
           credentials: s3
           revision: "1"
+    # Add node affinity for specific node deployment
+    nodeSelector:
+      kubernetes.io/hostname: k8s-worker-1
+    # Alternatively, you can use nodeAffinity for more complex rules:
+    # affinity:
+    #   nodeAffinity:
+    #     requiredDuringSchedulingIgnoredDuringExecution:
+    #       nodeSelectorTerms:
+    #       - matchExpressions:
+    #         - key: kubernetes.io/hostname
+    #           operator: In
+    #           values:
+    #           - k8s-worker-1
