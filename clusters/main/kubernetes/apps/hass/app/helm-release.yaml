@@ -28,16 +28,8 @@ spec:
       retries: 3
   uninstall:
     keepHistory: false
-  affinity:
-    nodeAffinity:
-      requiredDuringSchedulingIgnoredDuringExecution:
-        nodeSelectorTerms:
-        - matchExpressions:
-          - key: kubernetes.io/hostname
-            operator: In
-            values:
-            - k8s-worker-1
   values:
+    nodeName: k8s-worker-1
     ## Enable host networking for direct network access. True breaks K8s secruirty.
     # hostNetwork: true
     TZ: America/Chicago   
