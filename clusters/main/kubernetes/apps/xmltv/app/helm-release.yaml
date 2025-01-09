@@ -41,4 +41,23 @@ spec:
         ports:
           main:
             protocol: http
-            port: 38080           
+            port: 38080  
+
+    persistence:
+      dynmap:
+        enabled: true
+        type: nfs
+        path: /mnt/data1/xmltv
+        server: ${TRUENAS_IP}
+        mountPath: /xmltv
+      config:
+        enabled: false
+
+    workload:
+      main:
+        podSpec:
+          containers:
+            main:
+              env:
+                SERVER_PORT: "{{ .Values.service.main.ports.main.port }}"
+                SERVER_ROOT: "/xmltv"                     
