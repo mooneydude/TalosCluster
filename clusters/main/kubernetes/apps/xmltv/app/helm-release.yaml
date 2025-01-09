@@ -40,5 +40,5 @@ spec:
         loadBalancerIP: ${XMLTV_IP}
         ports:
           main:
-            port: 80
-            targetPort: 80    
+            protocol: http
+            port: 38080           
