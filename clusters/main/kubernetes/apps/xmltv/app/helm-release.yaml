@@ -3,14 +3,14 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: xteve
-  namespace: xteve
+  name: xmltv
+  namespace: xmltv
 spec:
   interval: 15m
   chart:
     spec:
-      chart: xteve
-      version: 15.4.0
+      chart: static-web-server
+      version: 6.7.0
       sourceRef:
         kind: HelmRepository
         name: truecharts
@@ -30,34 +30,15 @@ spec:
     keepHistory: false
 
   values:
-    TZ: America/Chicago
     global:
       stopAll: false
-    credentials:
-      s3:
-        type: s3
-        url: "${S3URL}"
-        bucket: "${S3PREFIX}-xteve"
-        accessKey: "${S3ID}"
-        secretKey: "${S3KEY}"
-        encrKey: "${S3KEY}"
+
+    TZ: America/Chicago
     service:
       main:
         type: LoadBalancer
-        loadBalancerIP: ${XTEVE_IP}
+        loadBalancerIP: ${XMLTV_IP}
         ports:
           main:
-            port: 34400
-            targetPort: 34400
-    persistence:
-      config:
-        volsync:
-        - name: config
-          type: restic
-          credentials: s3
-          dest:
-            enabled: true
-          src:
-            enabled: true
-            # trigger:
-            #   schedule: 30 1 * * *            
+            port: 80
+            targetPort: 80    

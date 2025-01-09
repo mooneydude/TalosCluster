@@ -7,3 +7,4 @@ resources:
   - hass/ks.yaml
   # - mooneycloud/ks.yaml
   - xteve/ks.yaml
+  - xmltv/ks.yaml
