@@ -90,22 +90,8 @@ nodes:
                       - siderolabs/amd-ucode
                       - siderolabs/iscsi-tools
                       - siderolabs/util-linux-tools                                      
-    - hostname: k8s-worker-2
-      ipAddress: 192.168.68.144
-      nameservers:
-        - 1.1.1.1
-        - 8.8.8.8
-      installDiskSelector:
-        size: <= 600GB
-      schematic:
-          customization:
-              systemExtensions:
-                  officialExtensions:
-                      - siderolabs/amd-ucode
-                      - siderolabs/iscsi-tools
-                      - siderolabs/util-linux-tools                                      
-    # - hostname: k8s-worker-3
-    #   ipAddress: 192.168.68.145
+    # - hostname: k8s-worker-2
+    #   ipAddress: 192.168.68.144
     #   nameservers:
     #     - 1.1.1.1
     #     - 8.8.8.8
@@ -115,9 +101,23 @@ nodes:
     #       customization:
     #           systemExtensions:
     #               officialExtensions:
-    #                   - siderolabs/qemu-guest-agent
+    #                   - siderolabs/amd-ucode
     #                   - siderolabs/iscsi-tools
     #                   - siderolabs/util-linux-tools                                      
+    - hostname: k8s-worker-3
+      ipAddress: 192.168.68.145
+      nameservers:
+        - 1.1.1.1
+        - 8.8.8.8
+      installDiskSelector:
+        size: <= 600GB
+      schematic:
+          customization:
+              systemExtensions:
+                  officialExtensions:
+                      - siderolabs/qemu-guest-agent
+                      - siderolabs/iscsi-tools
+                      - siderolabs/util-linux-tools                                      
 
 controlPlane:
     patches:
