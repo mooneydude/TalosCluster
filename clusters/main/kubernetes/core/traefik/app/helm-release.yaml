@@ -41,19 +41,19 @@ spec:
 
     ## When bootstrap new cluster, comment complete ingress section.
     # ingress:
-    #   main:
-    #     enabled: true
-    #     hosts:
-    #       - host: traefik.${DOMAIN_1}
-    #     integrations:
-    #       traefik:
-    #         enabled: true
-    #         # middlewares:
-    #         #   - name: local
-    #         #     namespace: traefik
-    #         #   - name: traefik-redirect
-    #         #     namespace: traefik  
-    #       certManager:
-    #         enabled: true
-    #         certificateIssuer: cloudflare
+      main:
+        enabled: true
+        hosts:
+          - host: traefik.${DOMAIN_1}
+        integrations:
+          traefik:
+            enabled: true
+            # middlewares:
+            #   - name: local
+            #     namespace: traefik
+            #   - name: traefik-redirect
+            #     namespace: traefik  
+          certManager:
+            enabled: true
+            certificateIssuer: cloudflare
         
