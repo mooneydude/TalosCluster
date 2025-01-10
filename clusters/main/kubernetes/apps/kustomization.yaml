@@ -10,3 +10,4 @@ resources:
   - xmltv/ks.yaml
   # - my-nginx/ks.yaml
   - docuseal/ks.yaml
+  - webgrabplux/ks.yaml
