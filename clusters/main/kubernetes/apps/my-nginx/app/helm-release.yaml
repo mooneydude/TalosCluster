@@ -1,0 +1,32 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: nginx-webserver
+  namespace: my-nginx  # Or specify your desired namespace
+spec:
+  interval: 5m
+  chart:
+    spec:
+      # Assuming you're using the official Nginx Helm chart from Bitnami
+      chart: nginx
+      version: "13.2.24"  # Check for the latest version on the chart repository
+      sourceRef:
+        kind: HelmRepository
+        name: bitnami-charts
+        namespace: flux-system  # Change this if your HelmRepository is in another namespace
+  values:
+    # Nginx configuration
+    service:
+      type: ClusterIP
+    ingress:
+      enabled: false # If you don't need ingress, keep this false. Change to true if you need it.
+    replicaCount: 1
+    containerPorts:
+      http: 80
+    resources:
+      requests:
+        cpu: 100m
+        memory: 128Mi
+      limits:
+        cpu: 200m
+        memory: 256Mi

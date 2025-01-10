@@ -8,3 +8,4 @@ resources:
   # - mooneycloud/ks.yaml
   - xteve/ks.yaml
   - xmltv/ks.yaml
+  - my-nginx/ks.yaml
