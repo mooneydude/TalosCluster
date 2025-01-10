@@ -9,3 +9,4 @@ resources:
   - xteve/ks.yaml
   - xmltv/ks.yaml
   # - my-nginx/ks.yaml
+  - docuseal/ks.yaml
