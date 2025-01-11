@@ -11,3 +11,4 @@ resources:
   # - my-nginx/ks.yaml
   - docuseal/ks.yaml
   # - webgrabplux/ks.yaml
+  - media

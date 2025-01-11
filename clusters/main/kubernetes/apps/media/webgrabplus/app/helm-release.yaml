@@ -4,7 +4,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: web-grab-plus
-  namespace: web-grab-plus
+  namespace: media
 spec:
   interval: 15m
   chart:

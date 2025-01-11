@@ -1,11 +1,11 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: webgrabplux
+  name: xteve
   namespace: flux-system
 spec:
   interval: 10m
-  path: clusters/main/kubernetes/apps/webgrabplux/app
+  path: clusters/main/kubernetes/apps/media/xteve/app
   prune: true
   sourceRef:
     kind: GitRepository
