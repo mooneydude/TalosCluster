@@ -39,21 +39,21 @@ spec:
           accessKey: "${S3ID}"
           secretKey: "${S3KEY}"
           encrKey: "${S3KEY}"
-    ingress:
-      main:
-        enabled: true
-        hosts:
-          - host: jellyfin.${DOMAIN_1}
-        integrations:
-          traefik:
-            enabled: true
-            ## To do
-            # middlewares:
-            #   - name: local
-            #     namespace: traefik
-          certManager:
-            enabled: true
-            certificateIssuer: cloudflare  
+      ingress:
+        main:
+          enabled: true
+          hosts:
+            - host: jellyfin.${DOMAIN_1}
+          integrations:
+            traefik:
+              enabled: true
+              ## To do
+              # middlewares:
+              #   - name: local
+              #     namespace: traefik
+            certManager:
+              enabled: true
+              certificateIssuer: cloudflare  
       persistence:
         config:
           volsync:
