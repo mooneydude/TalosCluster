@@ -68,16 +68,3 @@ spec:
               enabled: true
               trigger:
                 schedule: 30 0 * * *
-        media:
-          volsync:
-          - name: media
-            type: restic
-            cleanupTempPVC: true
-            cleanupCachePVC: true
-            credentials: s3
-            dest:
-              enabled: true
-            src:
-              enabled: true
-              trigger:
-                schedule: 30 0 * * *
