@@ -40,5 +40,24 @@ spec:
         loadBalancerIP: ${WEB_IP}
         ports:
           main:
-            port: 8080
-            targetPort: 8080   
+            protocol: http
+            port: 8083  
+
+    persistence:
+      dynmap:
+        enabled: true
+        type: nfs
+        path: /mnt/data1/web-server
+        server: ${TRUENAS_IP}
+        mountPath: /www
+      config:
+        enabled: false
+
+    workload:
+      main:
+        podSpec:
+          containers:
+            main:
+              env:
+                SERVER_PORT: "{{ .Values.service.main.ports.main.port }}"
+                SERVER_ROOT: "/www"                     
