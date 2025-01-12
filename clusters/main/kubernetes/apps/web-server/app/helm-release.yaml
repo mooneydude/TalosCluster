@@ -52,18 +52,18 @@ spec:
             port: 8083  
 
     persistence:
-        data:
-            enabled: true
-            readOnly: false
-            mountPath: /var/www/html
-            volsync:
-                - credentials: s3
-                  dest:
-                    enabled: true
-                  name: config
-                  src:
-                    enabled: true
-                  type: restic
+      data:
+        enabled: true
+        readOnly: false
+        mountPath: /var/www/html
+        volsync:
+            - credentials: s3
+              dest:
+                enabled: true
+              name: data
+              src:
+                enabled: true
+              type: restic
 
     workload:
       main:
