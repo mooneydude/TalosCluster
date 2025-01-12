@@ -38,7 +38,7 @@ spec:
       s3:
         type: s3
         url: "${S3URL}"
-        bucket: "${S3PREFIX-webserver"
+        bucket: "${S3PREFIX}-webserver"
         accessKey: "${S3ID}"
         secretKey: "${S3KEY}"
         encrKey: "${S3KEY}"       
@@ -52,7 +52,7 @@ spec:
             port: 8083  
 
     persistence:
-        www:
+        data:
             enabled: true
             readOnly: false
             mountPath: /www
