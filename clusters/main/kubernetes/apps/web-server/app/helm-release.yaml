@@ -72,11 +72,11 @@ spec:
               trigger:
                 schedule: 0 23 * * *
 
-    workload:
-      main:
-        podSpec:
-          containers:
-            main:
-              env:
-                SERVER_PORT: "{{ .Values.service.main.ports.main.port }}"
-                SERVER_ROOT: "/"                     
+    # workload:
+    #   main:
+    #     podSpec:
+    #       containers:
+    #         main:
+    #           env:
+    #             SERVER_PORT: "{{ .Values.service.main.ports.main.port }}"
+    #             SERVER_ROOT: "/"                     
