@@ -9,4 +9,4 @@ resources:
   - xmltv/ks.yaml
   - docuseal/ks.yaml
   - media
-  - web-server/ks.yaml
+  # - web-server/ks.yaml
