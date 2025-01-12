@@ -34,6 +34,14 @@ spec:
       stopAll: false
 
     TZ: America/Chicago
+    credentials:
+      s3:
+        type: s3
+        url: "${S3URL}"
+        bucket: "${S3PREFIX-webserver"
+        accessKey: "${S3ID}"
+        secretKey: "${S3KEY}"
+        encrKey: "${S3KEY}"       
     service:
       main:
         type: LoadBalancer
@@ -44,14 +52,18 @@ spec:
             port: 8083  
 
     persistence:
-      dynmap:
-        enabled: true
-        type: nfs
-        path: /mnt/data1/web-server
-        server: ${TRUENAS_IP}
-        mountPath: /www
-      config:
-        enabled: false
+        www:
+            enabled: true
+            readOnly: false
+            mountPath: /www
+            volsync:
+                - credentials: s3
+                  dest:
+                    enabled: true
+                  name: config
+                  src:
+                    enabled: true
+                  type: restic
 
     workload:
       main:
