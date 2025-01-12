@@ -33,9 +33,9 @@ spec:
     global:
       stopAll: false
     image:
-      repository: ghcr.io/dersonsena/docker-php-nginx-dev
+      repository: ghcr.io/traefik/whoami
       pullPolicy: IfNotPresent
-      tag: stable
+      tag: v1.10.3@sha256:43a68d10b9dfcfc3ffbfe4dd42100dc9aeaf29b3a5636c856337a5940f1b4f1c
     TZ: America/Chicago
     credentials:
       s3:
@@ -55,18 +55,19 @@ spec:
             port: 8083  
 
     persistence:
-      data:
-        enabled: true
-        readOnly: false
-        mountPath: /var/www/html
-        volsync:
-            - credentials: s3
-              dest:
-                enabled: true
-              name: data
-              src:
-                enabled: true
-              type: restic
+        html:
+          volsync:
+          - name: html
+            type: restic
+            cleanupTempPVC: true
+            cleanupCachePVC: true
+            credentials: s3
+            dest:
+              enabled: true
+            src:
+              enabled: true
+              trigger:
+                schedule: 0 23 * * *
 
     workload:
       main:
