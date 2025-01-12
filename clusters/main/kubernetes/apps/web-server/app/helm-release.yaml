@@ -56,6 +56,9 @@ spec:
 
     persistence:
         html:
+          enabled: true
+          readOnly: false
+          mountPath: /data        
           volsync:
           - name: html
             type: restic
