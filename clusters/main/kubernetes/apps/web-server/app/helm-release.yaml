@@ -32,7 +32,10 @@ spec:
   values:
     global:
       stopAll: false
-
+    image:
+        repository: docker.io/library/php:8.1.31-zts-alpine3.20
+        pullPolicy: IfNotPresent
+        tag: stable
     TZ: America/Chicago
     credentials:
       s3:
