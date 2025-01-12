@@ -33,7 +33,7 @@ spec:
     global:
       stopAll: false
     image:
-      repository: docker.io/library/php:8.1.31-zts-alpine3.20
+      repository: ghcr.io/dersonsena/docker-php-nginx-dev
       pullPolicy: IfNotPresent
       tag: stable
     TZ: America/Chicago
