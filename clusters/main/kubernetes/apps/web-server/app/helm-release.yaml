@@ -55,7 +55,7 @@ spec:
         data:
             enabled: true
             readOnly: false
-            mountPath: /www
+            mountPath: /var/www/html
             volsync:
                 - credentials: s3
                   dest:
@@ -72,4 +72,4 @@ spec:
             main:
               env:
                 SERVER_PORT: "{{ .Values.service.main.ports.main.port }}"
-                SERVER_ROOT: "/www"                     
+                SERVER_ROOT: "/"                     
