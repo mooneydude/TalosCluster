@@ -54,13 +54,10 @@ spec:
             port: 80
     persistence:
       config:
-        enabled: true
-        mountPath: "/bitnami/nginx/conf"
-        type: configMap
-        name: nginx-php-config
-        subPath: nginx.conf
         volsync:
         - name: config
+          mountPath: "/bitnami/nginx/conf"
+          subPath: nginx.conf
           type: restic
           cleanupTempPVC: true
           cleanupCachePVC: true
@@ -72,11 +69,9 @@ spec:
             trigger:
               schedule: 0 23 * * *         
       www:
-        enabled: true
-        type: emptyDir
-        mountPath: "/app"
         volsync:
         - name: www
+          mountPath: "/app"
           type: restic
           cleanupTempPVC: true
           cleanupCachePVC: true
