@@ -6,6 +6,6 @@ resources:
   - wg-easy/ks.yaml
   - hass/ks.yaml
   # - mooneycloud/ks.yaml
-  - xmltv/ks.yaml
+  # - xmltv/ks.yaml
   - docuseal/ks.yaml
   - media
