@@ -33,8 +33,7 @@ spec:
     global:
       stopAll: false
     image:
-      repository: docker.io/richarvey/nginx-php-fpm
-      pullPolicy: IfNotPresent
+      repository: docker.io/bitnami/nginx
       tag: latest
     TZ: America/Chicago
     credentials:
@@ -53,21 +52,38 @@ spec:
           main:
             protocol: http
             port: 80
-
     persistence:
-        html:
-          enabled: true
-          readOnly: false
-          mountPath: /data        
-          volsync:
-          - name: html
-            type: restic
-            cleanupTempPVC: true
-            cleanupCachePVC: true
-            credentials: s3
-            dest:
-              enabled: true
-            src:
-              enabled: true
-              trigger:
-                schedule: 0 23 * * *                
+      config:
+        enabled: true
+        mountPath: "/bitnami/nginx/conf"
+        type: configMap
+        name: nginx-php-config
+        subPath: nginx.conf
+        volsync:
+        - name: config
+          type: restic
+          cleanupTempPVC: true
+          cleanupCachePVC: true
+          credentials: s3
+          dest:
+            enabled: true
+          src:
+            enabled: true
+            trigger:
+              schedule: 0 23 * * *         
+      www:
+        enabled: true
+        type: emptyDir
+        mountPath: "/app"
+        volsync:
+        - name: www
+          type: restic
+          cleanupTempPVC: true
+          cleanupCachePVC: true
+          credentials: s3
+          dest:
+            enabled: true
+          src:
+            enabled: true
+            trigger:
+              schedule: 0 23 * * *
