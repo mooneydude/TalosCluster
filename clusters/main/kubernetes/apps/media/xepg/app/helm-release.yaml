@@ -55,12 +55,14 @@ spec:
     persistence:
       config:
         enabled: true
+        readOnly: false
         type: nfs
         server: ${TRUENAS_IP}
         path: /mnt/data1/xmltv
         mountPath: /bitnami/nginx/conf      
       data:
         enabled: true
+        readOnly: false
         type: nfs
         server: ${TRUENAS_IP}
         path: /mnt/data1/xmltv
