@@ -8,4 +8,4 @@ resources:
   # - mooneycloud/ks.yaml
   # - xmltv/ks.yaml
   - docuseal/ks.yaml
-  - media
+  # - media
