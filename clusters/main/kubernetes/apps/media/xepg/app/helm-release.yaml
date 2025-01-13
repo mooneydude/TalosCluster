@@ -59,7 +59,7 @@ spec:
         type: nfs
         server: ${TRUENAS_IP}
         path: /mnt/data1/xmltv
-        mountPath: /opt/bitnami/nginx/conf      
+        mountPath: /    
       data:
         enabled: true
         readOnly: false
