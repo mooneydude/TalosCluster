@@ -56,6 +56,7 @@ spec:
       config:
         volsync:
         - name: config
+          enabled: true
           mountPath: "/bitnami/nginx/conf"
           subPath: nginx.conf
           type: restic
@@ -71,6 +72,7 @@ spec:
       www:
         volsync:
         - name: www
+          enabled: true
           mountPath: "/app"
           type: restic
           cleanupTempPVC: true
