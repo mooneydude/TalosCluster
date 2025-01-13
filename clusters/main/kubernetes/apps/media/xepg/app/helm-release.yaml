@@ -33,15 +33,15 @@ spec:
     global:
       stopAll: false
     image:
-      repository: ghcr.io/traefik/whoami
+      repository: docker.io/richarvey/nginx-php-fpm
       pullPolicy: IfNotPresent
-      tag: v1.10.3@sha256:43a68d10b9dfcfc3ffbfe4dd42100dc9aeaf29b3a5636c856337a5940f1b4f1c
+      tag: latest
     TZ: America/Chicago
     credentials:
       s3:
         type: s3
         url: "${S3URL}"
-        bucket: "${S3PREFIX}-webserver"
+        bucket: "${S3PREFIX}-xepg"
         accessKey: "${S3ID}"
         secretKey: "${S3KEY}"
         encrKey: "${S3KEY}"       

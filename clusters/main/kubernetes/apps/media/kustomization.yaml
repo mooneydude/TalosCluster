@@ -4,3 +4,4 @@ resources:
   - namespace.yaml
   - xteve/ks.yaml
   - jellyfin/ks.yaml
+  - xepg/ks.yaml
