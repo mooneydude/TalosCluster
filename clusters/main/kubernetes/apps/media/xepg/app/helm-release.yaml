@@ -54,33 +54,14 @@ spec:
             port: 80
     persistence:
       config:
-        volsync:
-        - name: config
-          enabled: true
-          mountPath: "/bitnami/nginx/conf"
-          subPath: nginx.conf
-          type: restic
-          cleanupTempPVC: true
-          cleanupCachePVC: true
-          credentials: s3
-          dest:
-            enabled: true
-          src:
-            enabled: true
-            trigger:
-              schedule: 0 23 * * *         
-      www:
-        volsync:
-        - name: www
-          enabled: true
-          mountPath: "/app"
-          type: restic
-          cleanupTempPVC: true
-          cleanupCachePVC: true
-          credentials: s3
-          dest:
-            enabled: true
-          src:
-            enabled: true
-            trigger:
-              schedule: 0 23 * * *
+        enabled: true
+        type: nfs
+        server: ${TRUENAS_IP}
+        path: /bitnami/nginx/conf
+        mountPath: /app         
+      data:
+        enabled: true
+        type: nfs
+        server: ${TRUENAS_IP}
+        path: /mnt/data1/xmltv
+        mountPath: /app              
