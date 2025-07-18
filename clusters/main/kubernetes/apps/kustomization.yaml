@@ -5,3 +5,4 @@ resources:
   - cloudflared/ks.yaml
   - ext-cow/ks.yaml
   - jellyfin/ks.yaml
+  - xteve/ks.yaml
