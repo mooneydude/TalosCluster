@@ -10,7 +10,7 @@ resources:
   - jetstack.yaml
   - kustomization.yaml
   - prometheus-community.yaml
+  - rook-ceph.yaml  
   - spegel.yaml
-  - truecharts.yaml
   - truecharts.yaml  
 # more goes here!
