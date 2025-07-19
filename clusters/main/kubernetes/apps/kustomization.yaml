@@ -10,3 +10,4 @@ resources:
   - immich/ks.yaml
   - nextcloud/ks.yaml
   - vaultwarden/ks.yaml
+  - stun-turn/ks.yaml
