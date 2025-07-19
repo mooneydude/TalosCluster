@@ -7,3 +7,4 @@ resources:
   - jellyfin/ks.yaml
   - xteve/ks.yaml
   - hass/ks.yaml
+  - immich/ks.yaml
