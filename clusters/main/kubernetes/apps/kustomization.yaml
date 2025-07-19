@@ -9,3 +9,4 @@ resources:
   - hass/ks.yaml
   - immich/ks.yaml
   - nextcloud/ks.yaml
+  - vaultwarden/ks.yaml
