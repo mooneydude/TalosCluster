@@ -3,13 +3,13 @@ kind: Kustomization
 resources:
   - kubernetes-dashboard/ks.yaml
   - cloudflared/ks.yaml
-  - ext-cow/ks.yaml
-  - jellyfin/ks.yaml
-  - xteve/ks.yaml
-  - hass/ks.yaml
-  - immich/ks.yaml
-  - nextcloud/ks.yaml
-  - vaultwarden/ks.yaml
-  - stun-turn/ks.yaml
-  - speedtest-tracker/ks.yaml
-  - xepg/ks.yaml
+  # - ext-cow/ks.yaml
+  # - jellyfin/ks.yaml
+  # - xteve/ks.yaml
+  # - hass/ks.yaml
+  # - immich/ks.yaml
+  # - nextcloud/ks.yaml
+  # - vaultwarden/ks.yaml
+  # - stun-turn/ks.yaml
+  # - speedtest-tracker/ks.yaml
+  # - xepg/ks.yaml
