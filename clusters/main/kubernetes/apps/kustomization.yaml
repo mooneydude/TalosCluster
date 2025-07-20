@@ -12,3 +12,4 @@ resources:
   - vaultwarden/ks.yaml
   - stun-turn/ks.yaml
   - speedtest-tracker/ks.yaml
+  - xepg/ks.yaml
