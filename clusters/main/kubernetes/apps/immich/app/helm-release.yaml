@@ -46,9 +46,9 @@ spec:
     ingress:
       main:
         enabled: true
-        ingressClassName: external
+        ingressClassName: internal
         hosts:
-          - host: photos.${DOMAIN_1}
+          - host: pics.${DOMAIN_1}
         integrations:
           certManager:
             enabled: true
