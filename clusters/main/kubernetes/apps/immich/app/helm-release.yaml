@@ -48,7 +48,7 @@ spec:
         enabled: true
         ingressClassName: external
         hosts:
-          - host: pics.${DOMAIN_1}
+          - host: immich.${DOMAIN_1}
         integrations:
           certManager:
             enabled: true
