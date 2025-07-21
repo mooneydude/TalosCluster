@@ -48,13 +48,13 @@ spec:
         enabled: true
         ingressClassName: external
         hosts:
-          - host: nc.${DOMAIN_1}
+          - host: cloud.${DOMAIN_1}
             paths:
             - path: /
               pathType: Prefix
         integrations:      
           certManager:
-            certificateIssuer: domain-0-le-staging
+            certificateIssuer: domain-0-le-prod
             enabled: true
     persistence:
       config:
