@@ -39,7 +39,7 @@ spec:
       s3:
         type: s3
         url: "${MINIO_S3URL}"
-        bucket: "${MINIO_S3PREFIX}-nextcloud-rwx"
+        bucket: "${MINIO_S3PREFIX}-nextcloud"
         accessKey: "${MINIO_S3ID}"
         secretKey: "${MINIO_S3KEY}"
         encrKey: "${MINIO_S3KEY}"
@@ -97,9 +97,9 @@ spec:
         path: /mnt/data1/nc_userdata/rwx_data
     cnpg:
       main:
-        mode: recovery
+        # mode: recovery
         backups:
-          enabled: false
+          enabled: true
           credentials: s3
           scheduledBackups:
             - name: daily-backup
@@ -108,11 +108,11 @@ spec:
               immediate: true
               suspend: false           
           retentionPolicy: "7d"
-          revision: "4"
+          revision: "1"
         recovery:
           method: object_store
           credentials: s3
-          revision: "4"
+          revision: ""
     nextcloud:
       credentials:
         initialAdminPassword: ${NEXTCLOUD_PWD}
