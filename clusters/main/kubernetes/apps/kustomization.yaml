@@ -3,8 +3,8 @@ kind: Kustomization
 resources:
   - kubernetes-dashboard/ks.yaml
   - cloudflared/ks.yaml
-  # - ext-cow/ks.yaml
-  # - jellyfin/ks.yaml
+  - ext-cow/ks.yaml
+  - jellyfin/ks.yaml
   # - xteve/ks.yaml
   # - hass/ks.yaml
   # - immich/ks.yaml
