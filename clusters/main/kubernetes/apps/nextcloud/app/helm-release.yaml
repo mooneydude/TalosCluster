@@ -94,7 +94,7 @@ spec:
       data:
         type: nfs
         server: ${TRUENAS_IP}
-        path: /mnt/data1/nc_userdata/rwx_data
+        path: /mnt/data1/nc_userdata
     cnpg:
       main:
         # mode: recovery
