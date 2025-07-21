@@ -46,7 +46,7 @@ spec:
     ingress:
       main:
         enabled: true
-        ingressClassName: external
+        ingressClassName: internal
         hosts:
           - host: cloud.${DOMAIN_1}
             paths:
@@ -54,7 +54,7 @@ spec:
               pathType: Prefix
         integrations:      
           certManager:
-            certificateIssuer: domain-0-le-staging
+            certificateIssuer: domain-0-le-prod
             enabled: true
     persistence:
       config:
