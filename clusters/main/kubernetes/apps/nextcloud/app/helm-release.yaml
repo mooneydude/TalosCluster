@@ -118,7 +118,7 @@ spec:
         initialAdminPassword: ${NEXTCLOUD_PWD}
         initialAdminUser: ${NEXTCLOUD_USER}
       general:
-        accessIP: ${NGINX_EXTERNAL_IP}
+        accessIP: ${NGINX_INTERNAL_IP}
         default_phone_region: US
       previews:
         providers:
