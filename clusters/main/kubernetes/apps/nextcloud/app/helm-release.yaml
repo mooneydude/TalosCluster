@@ -54,7 +54,7 @@ spec:
               pathType: Prefix
         integrations:      
           certManager:
-            certificateIssuer: domain-0-le-prod
+            certificateIssuer: domain-0-le-staging
             enabled: true
     persistence:
       config:
