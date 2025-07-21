@@ -48,7 +48,7 @@ spec:
         enabled: true
         ingressClassName: external
         hosts:
-          - host: thecloud.${DOMAIN_1}
+          - host: cloud.${DOMAIN_1}
             paths:
             - path: /
               pathType: Prefix
