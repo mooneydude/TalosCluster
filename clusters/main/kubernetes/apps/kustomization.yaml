@@ -12,3 +12,4 @@ resources:
   - stun-turn/ks.yaml
   - speedtest-tracker/ks.yaml
   - xepg/ks.yaml
+  # - hass/ks.yaml
