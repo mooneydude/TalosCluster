@@ -43,7 +43,16 @@ spec:
       main:
         replicas: 1
     blocking:
-      clientGroupsBlock:  []
+      blacklist:
+      - name: mylist
+        lists:
+        - https://raw.githubusercontent.com/PolishFiltersTeam/KADhosts/master/KADhosts.txt
+        - https://raw.githubusercontent.com/FadeMind/hosts.extras/master/add.Spam/hosts
+        - https://v.firebog.net/hosts/static/w3kbl.txt
+      clientGroupsBlock:
+        - name: default
+          groups:
+            - mylist      
     k8sgateway:
       domains:
       - domain: "${DOMAIN_0}"
