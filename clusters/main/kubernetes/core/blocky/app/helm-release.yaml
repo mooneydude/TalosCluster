@@ -39,9 +39,9 @@ spec:
         integrations:
           metallb:
             enabled: true
-    # workload:
-    #   main:
-    #     replicas: 1
+    workload:
+      main:
+        replicas: 1
     blocking:
       clientGroupsBlock:  []
     k8sgateway:
