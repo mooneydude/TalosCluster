@@ -30,7 +30,7 @@ spec:
     keepHistory: false
   values:
     global:
-      stopAll: true
+      stopAll: false
     TZ: America/Chicago
     resources:
       requests:
@@ -52,7 +52,7 @@ spec:
     ingress:
       main:
         enabled: true
-        ingressClassName: internal
+        ingressClassName: exernal
         annotations:
           nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
           nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
