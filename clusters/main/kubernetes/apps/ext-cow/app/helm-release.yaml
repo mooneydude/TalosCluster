@@ -32,7 +32,7 @@ spec:
   values:
     TZ: America/Chicago
     global:
-      stopAll: false
+      stopAll: true
     service:
       main:
         type: ExternalIP
